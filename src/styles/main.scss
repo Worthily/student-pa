@@ -1,0 +1,34 @@
+@import './screens/AboutUsScreenStyles.scss';
+@import './screens/AnnouncementScreenStyles.scss';
+@import './screens/ContactsScreenStyles.scss';
+@import './screens/HomeScreenStyles.scss';
+@import './screens/ProfileScreenStyles.scss';
+@import './screens/ProgressScreenStyles.scss';
+@import './screens/SignInScreenStyles.scss';
+@import './screens/SignUpScreenStyles.scss';
+@import './screens/SpecialtyListScreenStyles.scss';
+@import './screens/TeachingScreenStyles.scss';
+
+html {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+// .screen__wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100%;
+//   width: 1300px;
+//   margin: 0 auto;
+// }
+// .productScreen__main {
+//   flex: 1 0 auto;
+// }
+// .footer {
+//   flex: 0 0 auto;
+// }
