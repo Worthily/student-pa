@@ -1,3 +1,4 @@
+// screens
 @import './screens/AboutUsScreenStyles.scss';
 @import './screens/AnnouncementScreenStyles.scss';
 @import './screens/ContactsScreenStyles.scss';
@@ -8,6 +9,9 @@
 @import './screens/SignUpScreenStyles.scss';
 @import './screens/SpecialtyListScreenStyles.scss';
 @import './screens/TeachingScreenStyles.scss';
+// components
+@import './components/SignInForm.scss';
+@import './components/SignUpForm.scss';
 
 html {
   padding: 0;
