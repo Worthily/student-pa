@@ -34,22 +34,22 @@ function SignUpForm() {
       }}
       render={({ handleSubmit }) => (
         <div className="signupform__form">
-          <Field name="email">
-            {({ input }) => (
-              <input
-                placeholder="Почта"
-                type="text"
-                className="signupform__input"
-                {...input}
-              />
-            )}
-          </Field>
           <Field name="name">
             {({ input }) => (
               <input
                 placeholder="ФИО"
                 className="signupform__input"
                 type="text"
+                {...input}
+              />
+            )}
+          </Field>
+          <Field name="email">
+            {({ input }) => (
+              <input
+                placeholder="Почта"
+                type="text"
+                className="signupform__input"
                 {...input}
               />
             )}

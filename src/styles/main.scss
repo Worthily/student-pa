@@ -12,6 +12,10 @@
 // components
 @import './components/SignInForm.scss';
 @import './components/SignUpForm.scss';
+@import './components/Header.scss';
+@import './components/Navigator.scss';
+@import './components/PostItem.scss';
+@import './components/Comment.scss';
 
 html {
   padding: 0;
@@ -22,17 +26,19 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  background-color: #f2f3f5;
 }
-// .screen__wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100%;
-//   width: 1300px;
-//   margin: 0 auto;
-// }
-// .productScreen__main {
-//   flex: 1 0 auto;
-// }
-// .footer {
-//   flex: 0 0 auto;
-// }
+.main{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  padding-top: 100px;
+}
+.content{
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-top: 10px;
+  z-index: 1;
+}

@@ -1,0 +1,36 @@
+.navigator{
+  width: 100%;
+  max-width: 285px;
+  position: fixed;
+  &__container{
+    padding-left: 20px;
+  }
+  &__item{
+    margin-top: 20px;
+    &-link{
+      display: flex;
+      align-items:flex-end;
+    }
+    &-img{
+      max-height: 35px;
+    }
+    &-text{
+      margin-left: 15px;
+      font-size: 22px;
+    }
+  }
+  &__item-profile{
+    &-link{
+      display: flex;
+      align-items: center;
+    }
+    &-img{
+      max-height: 45px;
+      border-radius: 100%;
+    }
+    &-text{
+      margin-left: 15px;
+      font-size: 22px;
+    }
+  }
+}

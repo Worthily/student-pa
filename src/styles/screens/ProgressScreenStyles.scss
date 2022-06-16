@@ -1,0 +1,95 @@
+.progress{
+  &__status{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+    &-item{
+      margin-top: 25px;
+    }
+    &-wrapper{
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 20px;
+    }
+    &-title{
+      font-size: 27px;
+    }
+    &-disc{
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    &-avg{
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    &-lable{
+      font-size: 20px;
+    }
+    &-marks{
+      display: flex;
+      &-wrapper{
+        display: flex;
+      }
+      &-item{
+        font-size: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+  &__avg{
+    &-title{
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 20px;
+    }
+    &-marks{
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      list-style: none;
+
+    }
+  }
+  &__marks{
+    &-disс-item{
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 20px;
+    }
+    &-disc{
+      // margin-top: 20px;
+      // background-color: #fff;
+      // padding: 25px;
+      // border-radius: 20px;
+      font-size: 27px;
+    }
+    &-item{
+      margin-top: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #c1c1c1;
+      &-task{
+        font-size: 20px;
+      }
+      &-teacher{
+        margin-top: 5px;
+        font-size: 20px;
+      }
+      &-group{
+        margin-top: 5px;
+        font-size: 20px;
+      }
+      &-answer{
+        margin-top: 5px;
+        font-size: 20px;
+      }
+      &-value{
+        margin-top: 5px;
+        font-size: 20px;
+      }
+    }
+  }
+
+}

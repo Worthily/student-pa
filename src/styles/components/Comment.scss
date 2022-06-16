@@ -1,0 +1,21 @@
+.comment{
+  display: flex;
+  margin-top: 25px;
+  align-items: flex-start;
+    &__img{
+      max-height: 45px;
+      border-radius: 100%;
+    }
+    &__wrapper{
+      margin-left: 10px;
+    }
+    &__text{
+      
+    }
+    &__content{
+      margin-top: 3px;
+    }
+    &__time{
+      color: #c1c1c1;
+    }
+}

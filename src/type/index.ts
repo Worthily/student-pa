@@ -57,6 +57,7 @@ export type Post = {
   content: string;
   img: string;
   userId: string;
+  time: string;
 };
 
 export type Comment = {
@@ -64,6 +65,7 @@ export type Comment = {
   text: string;
   userId: string;
   postId: string;
+  time: string;
 };
 
 export type Group = {

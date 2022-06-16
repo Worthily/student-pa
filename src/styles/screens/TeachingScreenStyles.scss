@@ -1,0 +1,59 @@
+.teaching{
+  &__discipline{
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      
+    &-title{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #c1c1c1;
+      &-text{
+        font-size: 27px;
+      }
+      &-button{
+        &-img{
+          max-width: 30px;
+        }
+      }
+    }
+    &-not-done{
+      padding-left: 10px;
+      padding-top: 30px;
+      &-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #c1c1c1;
+        &-text{
+          font-size: 27px;
+        }
+        &-img{
+          max-width: 30px;
+        }
+      }
+    }
+    &-done-item{
+      margin-top: 20px;
+      &-title{
+        font-size: 23px;
+      }
+      &-teach{
+        margin-top: 10px;
+        font-size: 20px;
+      }
+      &-task{
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      &-file{
+        margin-top: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomeScreen from './screens/HomeScreen';
 import AboutUsScreen from './screens/AboutUsScreen';
-import AnnouncementScreen from './screens/AnnouncementScreen';
 import ContactsScreen from './screens/ContactsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import ProgressScreen from './screens/ProgressScreen';
@@ -33,7 +32,6 @@ function App() {
         <Route path={CONTACTS} element={<ContactsScreen />} />
         <Route path={PROGRESS} element={<ProgressScreen />} />
         <Route path={TEACHING} element={<TeachingScreen />} />
-        <Route path={ANNOUNCEMENT} element={<AnnouncementScreen />} />
         <Route path={PROFILE} element={<ProfileScreen />} />
         <Route path={SIGNIN} element={<SignInScreen />} />
         <Route path={SIGNUP} element={<SignUpScreen />} />
