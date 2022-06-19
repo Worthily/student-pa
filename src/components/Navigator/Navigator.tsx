@@ -21,7 +21,7 @@ import aboutImg from '../../assets/img/about.png';
 
 function Navigator() {
   const navigate = useNavigate();
-  const userName = useSelector((state: State) => state.user.name);
+  const user = useSelector((state: State) => state.user);
   const screens = [
     {
       id: '1',
@@ -81,7 +81,7 @@ function Navigator() {
         <div className="navigator__item">
           <div
             onClick={() => {
-              navigate(PROFILE);
+              navigate(`${PROFILE}/${user.id}`);
             }}
             className="navigator__item-profile-link">
             <img

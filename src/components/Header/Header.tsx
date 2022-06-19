@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { authentActionCreator } from '../../store/actions';
 import { State } from '../../type';
 import logoPng from '../../assets/img/logo.png';
 import goBackPng from '../../assets/img/back.png';

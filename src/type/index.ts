@@ -36,7 +36,7 @@ export type AnswerExersize = {
   id: string;
   content: string;
   file: string;
-  studentI: string;
+  studentId: string;
   exerciseId: string;
   markId: string;
 };
@@ -85,6 +85,10 @@ export type Workload = {
   teacherId: string;
 };
 
+export type AppState = {
+  axiosHeaders: string;
+};
+
 export type State = {
   user: User;
   users: Users[];
@@ -96,4 +100,5 @@ export type State = {
   group: Group[];
   discipline: Discipline[];
   workload: Workload[];
+  appState: AppState[];
 };

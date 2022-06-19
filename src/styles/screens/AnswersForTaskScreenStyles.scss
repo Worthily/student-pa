@@ -1,0 +1,83 @@
+.answers{
+  &__head{
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    &-title{
+
+    }
+    &-descr{
+
+    }
+  }
+  &__info{
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    &-element{
+      &-title{
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+      &-item-good{
+        margin-bottom: 12px;
+        border-bottom: 1px solid #c1c1c1;
+        padding-bottom: 10px;
+        &-student{
+          font-size: 20px;
+        }
+        &-status{
+          color: #1fb021;
+          font-size: 20px;
+        }
+      }
+      &-item{
+        margin-bottom: 12px;
+        border-bottom: 1px solid #c1c1c1;
+        padding-bottom: 10px;
+        &-student{
+          font-size: 20px;
+        }
+        &-status{
+          color: #b01f1f;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  &__elements{
+    &-descr{
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      font-size: 24px;
+    }
+    &-item{
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      &-mark{
+      font-size: 20px;
+      }
+      &-lnk{
+        font-size: 20px;
+      }
+      &-name{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      &-answ{
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+      &-file{
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

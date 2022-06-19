@@ -1,0 +1,31 @@
+.create-comment{
+  &__form{
+    padding-left: 2px;
+    margin-top: 10px;
+    &-wrapper{
+      display: flex;
+      // align-items: center;
+    }
+  }
+  &__input{
+    border-radius: 20px;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+  }
+  &__button{
+    margin-top: 3px;
+    border: none;
+    background-color: #fff;
+    color: #fff;
+    font-size: 30px;
+    &-img{
+      max-width: 40px;
+    }
+  }
+  &__error{
+    color: rgb(173, 32, 32);
+    font-size: 18px;
+    margin-top: 5px;
+  }
+}

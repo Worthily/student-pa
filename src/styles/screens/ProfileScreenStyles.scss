@@ -1,0 +1,74 @@
+.profile{
+  &__head{
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    &-img{
+      border-radius: 100%;
+      max-width: 100px;
+    }
+    &-text{
+      margin-top: 15px;
+      margin-left: 30px;
+    }
+    &-name{
+      font-size: 24px;
+    }
+    &-group{
+      margin-top: 10px;
+      font-size: 19px;
+    }
+  }
+  &__info{
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    &-workload{
+      &-text{
+        font-size: 27px;
+      }
+      &-item{
+        margin-top: 15px;
+        &-group{
+          font-size: 21px;
+        }
+        &-disc{
+          font-size: 21px;
+        }
+      }
+    }
+    &-teachers{
+      font-size: 21px;
+      &-item{
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 21px;
+      }
+      &-text{
+        margin-bottom: 10px;
+      }
+    }
+    &-disciplines{
+      font-size: 21px;
+      margin-top: 25px;
+      &-item{
+        margin-left: 20px;
+        margin-top: 10px;
+        font-size: 21px;
+      }
+      &-text{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &__error{
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    font-size: 27px;
+  }
+}

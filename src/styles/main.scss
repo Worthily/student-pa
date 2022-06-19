@@ -9,6 +9,8 @@
 @import './screens/SignUpScreenStyles.scss';
 @import './screens/SpecialtyListScreenStyles.scss';
 @import './screens/TeachingScreenStyles.scss';
+@import './screens/AnswersForTaskScreenStyles.scss';
+@import './screens/AddNewPostScreenStyles.scss';
 // components
 @import './components/SignInForm.scss';
 @import './components/SignUpForm.scss';
@@ -16,6 +18,7 @@
 @import './components/Navigator.scss';
 @import './components/PostItem.scss';
 @import './components/Comment.scss';
+@import './components/CreateCommentFormStyles.scss';
 
 html {
   padding: 0;

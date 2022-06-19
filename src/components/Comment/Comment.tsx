@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { authentActionCreator } from '../../store/actions';
 import { Comment, State } from '../../type';
 import author from '../../assets/img/Avatar.png';
 

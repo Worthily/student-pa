@@ -4,6 +4,7 @@ import { State, Post, Comment } from '../../type';
 import postImg from '../../assets/img/postImg.jpg';
 import author from '../../assets/img/Avatar.png';
 import Comments from '../Comment/Comment';
+import CreateCommentForm from '../CreateCommentForm';
 
 function PostItem(props: { post: Post; comments: Comment[] }) {
   const users = useSelector((state: State) => state.users);
@@ -30,6 +31,9 @@ function PostItem(props: { post: Post; comments: Comment[] }) {
       <div className="post__text">{props.post.content}</div>
       <div className="post__img-wrapper">
         <img src={postImg} alt="post img" className="post__img" />
+      </div>
+      <div className="">
+        <CreateCommentForm postId={props.post.id} />
       </div>
       <ul className="post__comments">{elements}</ul>
     </div>

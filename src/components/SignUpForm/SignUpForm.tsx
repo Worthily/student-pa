@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { registrActionCreator } from '../../store/actions';
+// import { registrActionCreator } from '../../store/actions';
 import { State } from '../../type';
 
 function SignUpForm() {
@@ -17,13 +17,13 @@ function SignUpForm() {
       }) => {
         if (formObj.name && formObj.password) {
           if (formObj.email.trim() !== '' && formObj.password.trim() !== '') {
-            dispatch(
-              registrActionCreator({
-                password: formObj.password,
-                name: formObj.name,
-                email: formObj.email,
-              }),
-            );
+            // dispatch(
+            //   registrActionCreator({
+            //     password: formObj.password,
+            //     name: formObj.name,
+            //     email: formObj.email,
+            //   }),
+            // );
             console.log('true');
           } else {
             setError('Заполните поля ввода');
