@@ -18,6 +18,16 @@
       margin-left: 15px;
       font-size: 22px;
     }
+    &-exit{
+      margin-top: 20px;
+      font-size: 22px;
+      display: flex;
+      &-text{
+        margin-left: 15px;
+        font-size: 22px;
+        color: #b72828;
+      }
+    }
   }
   &__item-profile{
     &-link{

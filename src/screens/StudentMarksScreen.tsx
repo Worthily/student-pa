@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Comment, State } from '../type';
 import author from '../../assets/img/Avatar.png';
 import userImg from '../../assets/img/Avatar.png';
-import { Link, useParams } from 'react-router-dom';
-import { TEACHING } from '../type/constants';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { SIGNIN, TEACHING } from '../type/constants';
 import Header from '../components/Header';
 import Navigator from '../components/Navigator';
 
 function StudentMarksScreen() {
+  const navigate = useNavigate();
+  const authorized = useSelector((state: State) => state.user.logged);
+  useEffect(() => {
+    if (!authorized) {
+      navigate(SIGNIN);
+    }
+  });
   const { idUser, idDis } = useParams();
   // const user = useSelector((state: State) => state.user);
   const user = useSelector((state: State) =>

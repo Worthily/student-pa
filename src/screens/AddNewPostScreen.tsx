@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Navigator from '../components/Navigator';
 import Post from '../components/Post';
@@ -12,6 +12,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { createPostReqActionCreator } from '../store/saga/Post/actions';
 import fs from 'fs';
+import { SIGNIN } from '../type/constants';
 
 const schema = yup.object().shape({
   files: yup.mixed().test('required', 'pls select file', value => {
@@ -20,6 +21,14 @@ const schema = yup.object().shape({
 });
 
 function AddNewPostScreen() {
+  const navigate = useNavigate();
+  const authorized = useSelector((state: State) => state.user.logged);
+  useEffect(() => {
+    if (!authorized) {
+      navigate(SIGNIN);
+    }
+  });
+
   const dispatch = useDispatch();
   const [error, setError] = useState('');
   const [img, setImg] = useState('');

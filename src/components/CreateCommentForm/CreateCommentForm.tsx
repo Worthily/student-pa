@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  authReqActionCreator,
-  getStudentActionCreator,
-  getTeacherActionCreator,
-} from '../../store/saga/User/actions';
+import { authReqActionCreator } from '../../store/saga/User/actions';
 import send from '../../assets/img/send.png';
 import { State } from '../../type';
 import { createCommentReqActionCreator } from '../../store/saga/Comment/actions';

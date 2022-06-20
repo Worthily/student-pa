@@ -67,32 +67,90 @@ export const userSlice = createSlice({
   name: 'user',
   initialState: userInitialState,
   reducers: {
+    registrReq: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{ name: string; email: string; password: string }>,
+    ) => {},
+    registrResp: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{
+        token: string;
+        id: string;
+        name: string;
+        email: string;
+        password: string;
+        groupId: string;
+        banned: boolean;
+        bannedReason: string;
+        roles: any;
+      }>,
+    ) => {
+      const { roles } = payload;
+      let userRrole = '';
+      if (roles != []) {
+        console.log('не пустой');
+        if (roles.length == 1) {
+          console.log('длинна == 1');
+          if (roles[0].value == ADMIN) {
+            userRrole = ADMIN;
+          } else if (roles[0].value == TEACHER) {
+            userRrole = TEACHER;
+          } else if (roles[0].value == STUDENT) {
+            userRrole = STUDENT;
+          } else if (roles[0].value == USER) {
+            userRrole = USER;
+          } else {
+            userRrole = 'error';
+          }
+        } else if (roles.length > 1) {
+          console.log('длинна > 1');
+          let num = roles.length;
+          num = num - 1;
+          const dataRole = roles[num];
+          console.log(dataRole.value);
+          if (dataRole.value == ADMIN) {
+            console.log('выдан админ');
+            userRrole = ADMIN;
+          } else if (dataRole.value == TEACHER) {
+            userRrole = TEACHER;
+          } else if (dataRole.value == STUDENT) {
+            userRrole = STUDENT;
+          } else if (dataRole.value == USER) {
+            userRrole = USER;
+          } else {
+            userRrole = 'error';
+          }
+        } else {
+          userRrole = 'error';
+        }
+      } else {
+        userRrole = USER;
+      }
+
+      const userNewState: User = {
+        id: `${payload.id}`,
+        email: payload.email,
+        name: payload.name,
+        token: payload.token,
+        pass: payload.password,
+        groupId: `${payload.groupId}`,
+        banned: payload.banned,
+        bannedReason: payload.bannedReason,
+        role: userRrole,
+        errorExists: false,
+        errorText: '',
+        logged: true,
+      };
+      return userNewState;
+    },
     authReq: (
       state,
       { payload }: PayloadAction<{ email: string; password: string }>,
-    ) => {
-      const { email, password } = payload;
-      state.email = email;
-      state.pass = password;
-    },
-    getStudent: (
-      state,
-      { payload }: PayloadAction<{ email: string; password: string }>,
-    ) => {
-      return studentInitialState;
-    },
-    getTeacher: (
-      state,
-      { payload }: PayloadAction<{ email: string; password: string }>,
-    ) => {
-      return teachertInitialState;
-    },
-    // getAdmin: (
-    //   state,
-    //   { payload }: PayloadAction<{ email: string; password: string }>,
-    // ) => {
-    //   return adminInitialState;
-    // },
+    ) => {},
     authResp: (
       state,
       {
@@ -166,6 +224,9 @@ export const userSlice = createSlice({
         logged: true,
       };
       return userNewState;
+    },
+    exitProfile: state => {
+      return userInitialState;
     },
   },
 });

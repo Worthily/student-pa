@@ -19,6 +19,7 @@ export const USER = 'USER';
 //api
 export const API_LINK = 'http://student-account-api.space/';
 export const SIGN_IN_LINK = '/auth/login';
+export const SIGN_UP_LINK = '/auth/registration';
 export const CREATE_POST_LINK = '/posts';
 
 // admin@mail.ru

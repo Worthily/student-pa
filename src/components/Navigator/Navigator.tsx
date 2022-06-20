@@ -18,9 +18,12 @@ import marksImg from '../../assets/img/marks.png';
 import contactsImg from '../../assets/img/contacts.png';
 import specImg from '../../assets/img/spec.png';
 import aboutImg from '../../assets/img/about.png';
+import signOut from '../../assets/img/sign-out.png';
+import { exitProfileActionCreator } from '../../store/saga/User/actions';
 
 function Navigator() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const user = useSelector((state: State) => state.user);
   const screens = [
     {
@@ -93,6 +96,14 @@ function Navigator() {
           </div>
         </div>
         {elements}
+        <div
+          onClick={() => {
+            dispatch(exitProfileActionCreator());
+          }}
+          className="navigator__item-exit">
+          <img src={signOut} alt="icon" className="navigator__item-img" />
+          <div className="navigator__item-exit-text">Выход</div>
+        </div>
       </div>
     </div>
   );

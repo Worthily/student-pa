@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import Header from '../components/Header';
 import Navigator from '../components/Navigator';
 import { State } from '../type';
+import { SIGNIN } from '../type/constants';
 
 function AnswersForTaskScreen() {
+  const navigate = useNavigate();
+  const authorized = useSelector((state: State) => state.user.logged);
+  useEffect(() => {
+    if (!authorized) {
+      navigate(SIGNIN);
+    }
+  });
+
   const { id } = useParams();
 
   const user = useSelector((state: State) => state.user);

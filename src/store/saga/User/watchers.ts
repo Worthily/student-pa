@@ -1,7 +1,8 @@
 import { takeLatest } from 'redux-saga/effects';
-import { authReqActionCreator } from './actions';
-import { userSignInWorkSaga } from './workers';
+import { authReqActionCreator, registrReqActionCreator } from './actions';
+import { userSignInWorkSaga, userSignUpWorkSaga } from './workers';
 
 export function* authWatchSaga() {
   yield takeLatest(authReqActionCreator, userSignInWorkSaga);
+  yield takeLatest(registrReqActionCreator, userSignUpWorkSaga);
 }
