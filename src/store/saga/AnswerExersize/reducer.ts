@@ -105,5 +105,39 @@ export const answerExersizeInitialState: AnswerExersize[] = [
 export const answerExersizeSlice = createSlice({
   name: 'answerExersize',
   initialState: answerExersizeInitialState,
-  reducers: {},
+  reducers: {
+    getanswerExersizeReq: state => {},
+    getanswerExersizeResp: (
+      state,
+      { payload }: PayloadAction<AnswerExersize[]>,
+    ) => {
+      return [...payload];
+    },
+    createAnswereReq: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{
+        title: string;
+        content: string;
+        userId: number;
+        file: any;
+      }>,
+    ) => {},
+    createAnswerResp: (state, { payload }: PayloadAction<AnswerExersize>) => {
+      return [...state, payload];
+    },
+    createAnswerMarkReq: (
+      state,
+      { payload }: PayloadAction<{ value: number; answerId: number }>,
+    ) => {
+      const newState = state.map(item => {
+        if (item.id == `${payload.answerId}`) {
+          return { ...item, markId: `${payload.value}` };
+        }
+        return item;
+      });
+      return newState;
+    },
+  },
 });

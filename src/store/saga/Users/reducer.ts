@@ -96,5 +96,24 @@ export const usersInitialState: Users[] = [
 export const usersSlice = createSlice({
   name: 'users',
   initialState: usersInitialState,
-  reducers: {},
+  reducers: {
+    getUsersReq: state => {},
+    getUsersResp: (state, { payload }: PayloadAction<Users[]>) => {
+      return [...payload];
+    },
+    usersSetRoleReq: (
+      state,
+      { payload }: PayloadAction<{ value: string; userId: number }>,
+    ) => {},
+    usersSetRoleResp: (state, { payload }: PayloadAction<Users>) => {
+      return [...state, payload];
+    },
+    usersSetGroupReq: (
+      state,
+      { payload }: PayloadAction<{ value: string; userId: number }>,
+    ) => {},
+    usersSetGroupResp: (state, { payload }: PayloadAction<Users>) => {
+      return [...state, payload];
+    },
+  },
 });

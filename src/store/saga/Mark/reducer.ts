@@ -117,5 +117,26 @@ export const markInitialState: Mark[] = [
 export const markSlice = createSlice({
   name: 'mark',
   initialState: markInitialState,
-  reducers: {},
+  reducers: {
+    getMarksReq: state => {},
+    getMarksResp: (state, { payload }: PayloadAction<Mark[]>) => {
+      return [...payload];
+    },
+    createMarkReq: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{
+        value: number;
+        teacherId: number;
+        studentId: number;
+        groupId: number;
+        exerciseId: number;
+        disciplineId: number;
+      }>,
+    ) => {},
+    createMarkResp: (state, { payload }: PayloadAction<Mark>) => {
+      return [...state, payload];
+    },
+  },
 });

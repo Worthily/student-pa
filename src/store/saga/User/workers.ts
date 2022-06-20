@@ -7,6 +7,14 @@ import {
   registrRespActionCreator,
 } from './actions';
 import { ADMIN, TEACHER, STUDENT, USER } from '../../../type/constants';
+import { getDisciplineWorkSaga } from '../Discipline/workers';
+import { getExerciseWorkSaga } from '../Exersize/workers';
+import { getGroupWorkSaga } from '../Group/workers';
+import { getMarksWorkSaga } from '../Mark/workers';
+import { getPostsWorkSaga } from '../Post/workers';
+import { getUsersWorkSaga } from '../Users/workers';
+import { createCommentWorkSaga, getCommentsWorkSaga } from '../Comment/workers';
+import { getAnswerWorkSaga } from '../AnswerExersize/workers';
 
 export function* userSignInWorkSaga({
   payload,
@@ -44,6 +52,13 @@ export function* userSignInWorkSaga({
         roles: data[1].roles,
       },
     });
+    // yield getUsersWorkSaga();
+    yield getPostsWorkSaga();
+    // yield getMarksWorkSaga();
+    // yield getGroupWorkSaga();
+    // yield getExerciseWorkSaga();
+    yield getCommentsWorkSaga();
+    // yield getAnswerWorkSaga();
   } else {
     console.log('error');
   }

@@ -66,14 +66,16 @@ export const commentSlice = createSlice({
   name: 'comment',
   initialState: commentInitialState,
   reducers: {
+    getCommentsReq: state => {},
+    getCommentsResp: (state, { payload }: PayloadAction<Comment[]>) => {
+      return [...payload];
+    },
     createCommentReq: (
       state,
       {
         payload,
       }: PayloadAction<{ text: string; idUser: string; idPost: string }>,
-    ) => {
-      console.log('cr Comm');
-    },
+    ) => {},
     createCommentResp: (
       state,
       {
@@ -88,11 +90,12 @@ export const commentSlice = createSlice({
     ) => {
       const newComment: Comment = {
         id: `${payload.id}`,
-        text: 'А также элементы политического процесса',
+        text: payload.text,
         userId: `${payload.idUser}`,
         postId: `${payload.idPost}`,
         time: payload.time,
       };
+      const newComments = [...state, newComment];
     },
   },
 });

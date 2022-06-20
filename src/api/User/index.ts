@@ -23,21 +23,3 @@ export async function signUp(name: string, email: string, password: string) {
       return error;
     });
 }
-
-// export async function signUp(
-//   phone: string,
-//   password: string,
-//   first_name: string,
-//   last_name: string,
-// ) {
-//   return await api
-//     .post(SIGN_UP_LINK, {
-//       phone: phone,
-//       password: password,
-//       first_name: first_name,
-//       last_name: last_name,
-//     })
-//     .catch(error => {
-//       return error;
-//     });
-// }

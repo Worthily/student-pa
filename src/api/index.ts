@@ -4,9 +4,6 @@ import { store } from '../store';
 import { State } from '../type';
 import { API_LINK } from '../type/constants';
 
-// multipart/form-data
-// application/json
-// const contType = store.getState().appState.axiosHeaders;
 const headers = {
   'Content-Type': 'application/json',
 };

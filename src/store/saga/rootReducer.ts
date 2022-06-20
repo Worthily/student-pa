@@ -1,6 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { answerExersizeSlice } from './AnswerExersize/reducer';
-import { appStateSlice } from './AppState/reducer';
 import { commentSlice } from './Comment/reducer';
 import { disciplineSlice } from './Discipline/reducer';
 import { exersizeSlice } from './Exersize/reducer';
@@ -22,5 +21,4 @@ export const reducer = combineReducers({
   group: groupSlice.reducer,
   discipline: disciplineSlice.reducer,
   workload: workloadSlice.reducer,
-  appState: appStateSlice.reducer,
 });

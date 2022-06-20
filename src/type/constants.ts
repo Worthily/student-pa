@@ -20,7 +20,15 @@ export const USER = 'USER';
 export const API_LINK = 'http://student-account-api.space/';
 export const SIGN_IN_LINK = '/auth/login';
 export const SIGN_UP_LINK = '/auth/registration';
-export const CREATE_POST_LINK = '/posts';
-
-// admin@mail.ru
-// admin123
+export const POST_LINK = '/posts';
+export const USERS_LINK = '/users';
+export const USERS_ROLE_LINK = '/users/role';
+export const USERS_GROUP_LINK = '/users/setGroup';
+export const COMMENT_LINK = '/review';
+export const DISCIPLINE_LINK = '/discipline';
+export const GROUP_LINK = '/Group';
+export const WORKLOAD_LINK = '/teacher-plan';
+export const EXERCISE_LINK = '/exercise';
+export const ANSWER_EXERCISE_LINK = '/answer-exercise';
+export const ANSWER_EXERCISE_MARK_LINK = '/answer-exercise/SetMark';
+export const MARK_LINK = '/mark';

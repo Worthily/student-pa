@@ -55,7 +55,7 @@ export type Post = {
   id: string;
   title: string;
   content: string;
-  img: string;
+  image: string;
   userId: string;
   time: string;
 };

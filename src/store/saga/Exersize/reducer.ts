@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
+import { retry } from 'redux-saga/effects';
 import { Exersize, User } from '../../../type';
 import { STUDENT } from '../../../type/constants';
 
@@ -69,5 +70,29 @@ export const exersizeInitialState: Exersize[] = [
 export const exersizeSlice = createSlice({
   name: 'exersize',
   initialState: exersizeInitialState,
-  reducers: {},
+  reducers: {
+    getExerciseReq: (
+      state,
+      { payload }: PayloadAction<{ value: number; answerId: number }>,
+    ) => {},
+    getExerciseResp: (state, { payload }: PayloadAction<Exersize[]>) => {
+      return [...payload];
+    },
+    createExerciseReq: (
+      state,
+      {
+        payload,
+      }: PayloadAction<{
+        title: string;
+        content: string;
+        userId: number;
+        groupId: number;
+        disciplineId: number;
+        file: any;
+      }>,
+    ) => {},
+    createExerciseResp: (state, { payload }: PayloadAction<Exersize>) => {
+      return [...state, payload];
+    },
+  },
 });

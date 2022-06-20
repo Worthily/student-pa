@@ -1,26 +1,18 @@
 import { call, put } from 'redux-saga/effects';
-import { createPost } from '../../../api/Post';
+import { createPost, getPosts } from '../../../api/Post';
 import {
-  setDataHeaderActionCreator,
-  setImgHeaderActionCreator,
-} from '../AppState/actions';
-import {
+  getPostsReqActionCreator,
+  getPostsRespActionCreator,
   createPostReqActionCreator,
   createPostRespActionCreator,
 } from './actions';
+import { Post, User } from '../../../type';
 
 export function* createPostWorkSaga({
   payload,
 }: ReturnType<typeof createPostReqActionCreator>) {
-  // console.log(payload);
-
-  yield put({
-    type: setImgHeaderActionCreator.type,
-  });
-
   const newIntUser = parseInt(payload.idUser);
   if (newIntUser || newIntUser == 0) {
-    // console.log(payload);
     const { data } = yield call(
       createPost,
       payload.title,
@@ -28,7 +20,7 @@ export function* createPostWorkSaga({
       newIntUser,
       payload.image,
     );
-    // console.log(data);
+
     if (data) {
       yield put({
         type: createPostRespActionCreator.type,
@@ -45,44 +37,17 @@ export function* createPostWorkSaga({
       console.log(data);
     }
   }
-  yield put({
-    type: setDataHeaderActionCreator.type,
-  });
 }
-// export function* userSignUpWorkSaga({
-//   payload,
-// }: ReturnType<typeof onSignUpReqActionCreator>) {
-//   const { data } = yield call(
-//     signUp,
-//     payload.phone,
-//     payload.password,
-//     payload.firstName,
-//     payload.lastName,
-//   );
-//
-//   if (data) {
-//     yield put({
-//       type: onSignUpRespActionCreator.type,
-//       payload: { authorized: data.success, token: data.token },
-//     });
-//     const { user } = yield call(getUser);
-//     if (user) {
-//       yield put({
-//         type: getUserActionCreator.type,
-//         payload: {
-//           id: user.id,
-//           phone: user.phone,
-//           firstName: user.first_name,
-//           lastName: user.last_name,
-//         },
-//       });
-//     }
-//   } else {
-//     yield put({
-//       type: setSignUpErrorActionCreator.type,
-//       payload: {
-//         error: 'Sign Up error',
-//       },
-//     });
-//   }
-// }
+
+export function* getPostsWorkSaga() {
+  const { data } = yield call(getPosts);
+  console.log(data);
+  if (data) {
+    yield put({
+      type: getPostsRespActionCreator.type,
+      payload: data,
+    });
+    console.log('дата пришла');
+    console.log(data);
+  }
+}

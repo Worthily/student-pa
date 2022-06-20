@@ -21,5 +21,17 @@ export const groupInitialState: Group[] = [
 export const groupSlice = createSlice({
   name: 'group',
   initialState: groupInitialState,
-  reducers: {},
+  reducers: {
+    getGroupReq: state => {},
+    getGroupResp: (state, { payload }: PayloadAction<Group[]>) => {
+      return [...payload];
+    },
+    createGroupReq: (
+      state,
+      { payload }: PayloadAction<{ value: string }>,
+    ) => {},
+    createGroupResp: (state, { payload }: PayloadAction<Group>) => {
+      return [...state, payload];
+    },
+  },
 });

@@ -21,5 +21,17 @@ export const disciplineInitialState: Discipline[] = [
 export const disciplineSlice = createSlice({
   name: 'discipline',
   initialState: disciplineInitialState,
-  reducers: {},
+  reducers: {
+    getDisciplineReq: state => {},
+    getDisciplineResp: (state, { payload }: PayloadAction<Discipline[]>) => {
+      return [...payload];
+    },
+    createDisciplineReq: (
+      state,
+      { payload }: PayloadAction<{ value: string }>,
+    ) => {},
+    createDisciplineResp: (state, { payload }: PayloadAction<Discipline>) => {
+      return [...state, payload];
+    },
+  },
 });

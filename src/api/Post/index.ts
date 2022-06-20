@@ -1,5 +1,5 @@
-import { apiAlt } from '..';
-import { CREATE_POST_LINK } from '../../type/constants';
+import { apiAlt, api } from '..';
+import { POST_LINK } from '../../type/constants';
 
 export async function createPost(
   title: string,
@@ -8,7 +8,7 @@ export async function createPost(
   image: any,
 ) {
   return await apiAlt
-    .post(CREATE_POST_LINK, {
+    .post(POST_LINK, {
       title: `${title}`,
       content: content,
       userID: userId,
@@ -17,4 +17,10 @@ export async function createPost(
     .catch(error => {
       return error;
     });
+}
+
+export async function getPosts() {
+  return await api.get(POST_LINK).catch(error => {
+    return error;
+  });
 }

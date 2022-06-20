@@ -10,9 +10,12 @@ import { Field, useForm } from 'react-hook-form';
 import send from '../assets/img/send.png';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { createPostReqActionCreator } from '../store/saga/Post/actions';
+import {
+  createPostReqActionCreator,
+  getPostsReqActionCreator,
+} from '../store/saga/Post/actions';
 import fs from 'fs';
-import { SIGNIN } from '../type/constants';
+import { HOME, SIGNIN } from '../type/constants';
 
 const schema = yup.object().shape({
   files: yup.mixed().test('required', 'pls select file', value => {
@@ -40,7 +43,6 @@ function AddNewPostScreen() {
   });
 
   function onSubmit(data: any) {
-    // console.log(data);
     dispatch(
       createPostReqActionCreator({
         text: data.title,
@@ -49,6 +51,8 @@ function AddNewPostScreen() {
         image: data.files[0],
       }),
     );
+    dispatch(getPostsReqActionCreator());
+    navigate(HOME);
   }
 
   const postForm = (

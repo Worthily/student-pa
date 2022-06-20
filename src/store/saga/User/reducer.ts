@@ -3,21 +3,6 @@ import { combineReducers } from 'redux';
 import { User } from '../../../type';
 import { STUDENT, TEACHER, ADMIN, USER } from '../../../type/constants';
 
-export const userInitialState: User = {
-  id: '-1',
-  email: '',
-  name: '',
-  token: '',
-  pass: '',
-  groupId: '',
-  banned: false,
-  bannedReason: '',
-  role: '',
-  errorExists: false,
-  errorText: '',
-  logged: false,
-};
-
 export const teachertInitialState: User = {
   id: '1',
   email: '',
@@ -61,6 +46,21 @@ export const adminInitialState: User = {
   errorExists: false,
   errorText: '',
   logged: true,
+};
+
+export const userInitialState: User = {
+  id: '-1',
+  email: '',
+  name: '',
+  token: '',
+  pass: '',
+  groupId: '',
+  banned: false,
+  bannedReason: '',
+  role: '',
+  errorExists: false,
+  errorText: '',
+  logged: false,
 };
 
 export const userSlice = createSlice({
